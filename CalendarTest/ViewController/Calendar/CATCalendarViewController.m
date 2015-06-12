@@ -183,10 +183,21 @@ const NSInteger DaysPerWeek = 7;
 #pragma mark UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     // calculate number of weeks
-    NSRange rangeOfWeeks = [[NSCalendar currentCalendar] rangeOfUnit:NSCalendarUnitWeekOfMonth
-                                                              inUnit:NSCalendarUnitMonth
-                                                             forDate:self.firstDateOfMonth];
-    NSUInteger numberOfWeeks = rangeOfWeeks.length;
+    NSUInteger numberOfWeeks;
+    
+    // iOS8は月ごとの週の数を取得
+    if ([[UIDevice currentDevice] systemVersion].floatValue >= 8.0) {
+        NSRange rangeOfWeeks = [[NSCalendar currentCalendar] rangeOfUnit:NSCalendarUnitWeekOfMonth
+                                                                  inUnit:NSCalendarUnitMonth
+                                                                 forDate:[NSDate date]];
+        numberOfWeeks = rangeOfWeeks.length;
+    }
+    // iOS7以下は上記コードが「何故か」ばぐるので固定値入れて回避
+    // TODO:要調査
+    else {
+        numberOfWeeks = 6;
+    }
+
     NSInteger numberOfItems = numberOfWeeks * DaysPerWeek;
     
     return numberOfItems;

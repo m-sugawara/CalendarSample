@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nba-oy-ecC">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Item 1-->
+        <!--Schedule-->
         <scene sceneID="FxT-cm-CUb">
             <objects>
-                <viewController id="vyK-fe-231" sceneMemberID="viewController">
+                <viewController id="vyK-fe-231" customClass="CATScheduleViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cDo-Dc-M9c"/>
                         <viewControllerLayoutGuide type="bottom" id="MlZ-pS-vCu"/>
@@ -16,9 +17,48 @@
                     <view key="view" contentMode="scaleToFill" id="31p-kc-xcK">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ds8-6T-hef">
+                                <rect key="frame" x="0.0" y="72" width="600" height="479"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="Bm1-to-mOl">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bm1-to-mOl" id="OKp-O7-zbV">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vyK-fe-231" id="Nw8-Oc-j19"/>
+                                    <outlet property="delegate" destination="vyK-fe-231" id="5Xc-LM-hzR"/>
+                                </connections>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nz9-zl-LhH">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <color key="barTintColor" red="0.56078433989999998" green="0.94901967050000002" blue="0.83137261870000001" alpha="1" colorSpace="deviceRGB"/>
+                                <items>
+                                    <navigationItem title="Schedule" id="wkR-gt-iCp"/>
+                                </items>
+                                <connections>
+                                    <outlet property="delegate" destination="vyK-fe-231" id="LRx-fV-Vxu"/>
+                                </connections>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="nz9-zl-LhH" secondAttribute="trailing" constant="-16" id="1un-8g-mFL"/>
+                            <constraint firstItem="ds8-6T-hef" firstAttribute="leading" secondItem="31p-kc-xcK" secondAttribute="leadingMargin" constant="-16" id="2vD-ZZ-HyM"/>
+                            <constraint firstItem="ds8-6T-hef" firstAttribute="top" secondItem="nz9-zl-LhH" secondAttribute="bottom" id="9JW-bl-X2E"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ds8-6T-hef" secondAttribute="trailing" constant="-16" id="HcF-Nw-xbg"/>
+                            <constraint firstItem="nz9-zl-LhH" firstAttribute="top" secondItem="cDo-Dc-M9c" secondAttribute="bottom" constant="8" id="Nnn-8j-iPX"/>
+                            <constraint firstItem="nz9-zl-LhH" firstAttribute="leading" secondItem="31p-kc-xcK" secondAttribute="leadingMargin" constant="-16" id="nU4-zb-dx3"/>
+                            <constraint firstItem="MlZ-pS-vCu" firstAttribute="top" secondItem="ds8-6T-hef" secondAttribute="bottom" id="tIY-vO-Aye"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="TOF-im-dw6"/>
+                    <tabBarItem key="tabBarItem" title="Schedule" id="TOF-im-dw6"/>
+                    <connections>
+                        <outlet property="tableView" destination="ds8-6T-hef" id="2n3-mH-8VV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iT0-JZ-CGF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -151,7 +191,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="d9w-NP-viX" userLabel="Calendar"/>
+                    <tabBarItem key="tabBarItem" title="Calendar" id="d9w-NP-viX" userLabel="Calendar"/>
                     <connections>
                         <outlet property="collectionView" destination="bXC-RZ-nkV" id="EpP-Lk-geq"/>
                         <outlet property="navigationBar" destination="Xz8-HA-QW9" id="cEX-Un-r4G"/>

@@ -14,7 +14,7 @@
 const CGFloat CellMargin = 2;
 const NSInteger DaysPerWeek = 7;
 
-@interface ViewController () <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UIBarPositioningDelegate, UITabBarDelegate, CalendarPopupViewDelegate>
+@interface ViewController () <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UIBarPositioningDelegate, CalendarPopupViewDelegate>
 
 @property(nonatomic, weak)IBOutlet CalendarView *collectionView;
 @property(nonatomic, weak)IBOutlet UINavigationBar *navigationBar;
@@ -47,6 +47,17 @@ const NSInteger DaysPerWeek = 7;
     self.firstDateOfMonth = [self firstDateOfMonthFromDate:now difference:0];
 
     [self reloadCalendarTitle];
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    // おそらく、Autolayoutの計算をしてから、Tabbarを読み込んでおり、
+    // Tabbarの高さの分だけ計算がずれている。
+    // 上記の回避策として、ここでreloadDataをして、無理やりAutolayoutを再読み込みしている。
+    // TODO:もっと良い方法を探したほうがよさそう。
+    [self.collectionView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {

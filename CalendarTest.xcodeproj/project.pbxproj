@@ -186,6 +186,7 @@
 		5966F1791B2984E300BC783D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = CAT;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = Zappallas;
 				TargetAttributes = {

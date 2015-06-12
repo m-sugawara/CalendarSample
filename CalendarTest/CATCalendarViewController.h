@@ -1,5 +1,5 @@
 //
-//  CollectionViewCell.h
+//  CATCalendarViewController.h
 //  CalendarTest
 //
 //  Created by m_sugawara on 2015/06/11.
@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CollectionViewCell : UICollectionViewCell
-@property (weak, nonatomic) IBOutlet UILabel *dayLabel;
+@interface CATCalendarViewController : UIViewController
+
 
 @end
+

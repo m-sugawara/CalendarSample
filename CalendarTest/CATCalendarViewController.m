@@ -1,39 +1,39 @@
 //
-//  ViewController.m
+//  CATCalendarViewController.m
 //  CalendarTest
 //
 //  Created by m_sugawara on 2015/06/11.
 //  Copyright (c) 2015年 Zappallas. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "CATCalendarViewController.h"
 
-#import "CalendarView.h"
-#import "CalendarPopupView.h"
+#import "CATCalendarView.h"
+#import "CATCalendarPopupView.h"
 
 const CGFloat CellMargin = 2;
 const NSInteger DaysPerWeek = 7;
 
-@interface ViewController () <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UIBarPositioningDelegate, CalendarPopupViewDelegate>
+@interface CATCalendarViewController () <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UIBarPositioningDelegate, CATCalendarPopupViewDelegate>
 
-@property(nonatomic, weak)IBOutlet CalendarView *collectionView;
+@property(nonatomic, weak)IBOutlet CATCalendarView *collectionView;
 @property(nonatomic, weak)IBOutlet UINavigationBar *navigationBar;
 
 @property(nonatomic)BOOL popupViewShowing;
-@property(nonatomic, strong)CalendarPopupView *popupView;
+@property(nonatomic, strong)CATCalendarPopupView *popupView;
 
 @property(nonatomic, strong)NSDate *firstDateOfMonth;
 
 @end
 
-@implementation ViewController
+@implementation CATCalendarViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 
     // create popup view
-    CalendarPopupView *popupView = [CalendarPopupView popupViewWithDelegate:self];
+    CATCalendarPopupView *popupView = [CATCalendarPopupView popupViewWithDelegate:self];
     CGFloat margin = 40.0f;
     popupView.frame = CGRectMake(margin,margin * 2.0f,
                                  self.view.bounds.size.width - 2.0f * margin,
@@ -193,7 +193,7 @@ const NSInteger DaysPerWeek = 7;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
+    CATCalendarViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
     // 日付を取得
     NSDate *date = [self dateForCellAtIndexPath:indexPath];
     // ラベルに日付を設定
@@ -238,7 +238,7 @@ const NSInteger DaysPerWeek = 7;
 }
 
 #pragma mark CalendarPopupViewDelegate
-- (void)calendarPopupViewDidTapView:(CalendarPopupView *)calendarPopupView {
+- (void)calendarPopupViewDidTapView:(CATCalendarPopupView *)calendarPopupView {
     self.popupViewShowing = NO;
 }
 

@@ -1,19 +1,19 @@
 //
-//  CalendarView.m
+//  CATCalendarView.m
 //  CalendarTest
 //
 //  Created by m_sugawara on 2015/06/11.
 //  Copyright (c) 2015年 Zappallas. All rights reserved.
 //
 
-#import "CalendarView.h"
+#import "CATCalendarView.h"
 
 
-@interface CalendarView()
+@interface CATCalendarView()
 
 @end
 
-@implementation CalendarView
+@implementation CATCalendarView
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {

@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  CATAppDelegate.h
 //  CalendarTest
 //
 //  Created by m_sugawara on 2015/06/11.
@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface CATAppDelegate : UIResponder <UIApplicationDelegate>
+
+@property (strong, nonatomic) UIWindow *window;
 
 
 @end

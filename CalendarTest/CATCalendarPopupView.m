@@ -6,16 +6,16 @@
 //  Copyright (c) 2015年 Zappallas. All rights reserved.
 //
 
-#import "CalendarPopupView.h"
+#import "CATCalendarPopupView.h"
 
-@implementation CalendarPopupView
+@implementation CATCalendarPopupView
 
 #pragma mark Designated Initializer
 
 #pragma mark Conveniece Initializer
-+ (CalendarPopupView *)popupViewWithDelegate:(id<CalendarPopupViewDelegate>)delegate {
-    UINib *nib = [UINib nibWithNibName:NSStringFromClass([CalendarPopupView class]) bundle:nil];
-    CalendarPopupView *popupView = [[nib instantiateWithOwner:nil options:nil] firstObject];
++ (CATCalendarPopupView *)popupViewWithDelegate:(id<CATCalendarPopupViewDelegate>)delegate {
+    UINib *nib = [UINib nibWithNibName:NSStringFromClass([CATCalendarPopupView class]) bundle:nil];
+    CATCalendarPopupView *popupView = [[nib instantiateWithOwner:nil options:nil] firstObject];
     popupView.delegate = delegate;
     
     return popupView;

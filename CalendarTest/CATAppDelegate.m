@@ -1,18 +1,18 @@
 //
-//  AppDelegate.m
+//  CATAppDelegate.m
 //  CalendarTest
 //
 //  Created by m_sugawara on 2015/06/11.
 //  Copyright (c) 2015年 Zappallas. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "CATAppDelegate.h"
 
-@interface AppDelegate ()
+@interface CATAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation CATAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

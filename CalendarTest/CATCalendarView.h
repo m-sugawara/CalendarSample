@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  CATCalendarView.h
 //  CalendarTest
 //
 //  Created by m_sugawara on 2015/06/11.
@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+#import "CATCalendarViewCell.h"
 
-@property (strong, nonatomic) UIWindow *window;
+extern const NSInteger DaysPerWeek;
+
+@interface CATCalendarView : UICollectionView
 
 
 @end
-

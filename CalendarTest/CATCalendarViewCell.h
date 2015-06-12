@@ -1,5 +1,5 @@
 //
-//  CalendarView.h
+//  CATCalendarViewCell.h
 //  CalendarTest
 //
 //  Created by m_sugawara on 2015/06/11.
@@ -8,11 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#import "CollectionViewCell.h"
-
-extern const NSInteger DaysPerWeek;
-
-@interface CalendarView : UICollectionView
-
+@interface CATCalendarViewCell : UICollectionViewCell
+@property (weak, nonatomic) IBOutlet UILabel *dayLabel;
 
 @end

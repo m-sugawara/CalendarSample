@@ -1,13 +1,13 @@
 //
-//  CollectionViewCell.m
+//  CATCalendarViewCell.m
 //  CalendarTest
 //
 //  Created by m_sugawara on 2015/06/11.
 //  Copyright (c) 2015年 Zappallas. All rights reserved.
 //
 
-#import "CollectionViewCell.h"
+#import "CATCalendarViewCell.h"
 
-@implementation CollectionViewCell
+@implementation CATCalendarViewCell
 
 @end

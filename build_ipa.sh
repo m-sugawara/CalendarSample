@@ -1,3 +1,11 @@
-PROVISIONING_FILE_NAME= ios profiles:download --team "ZAPPALLAS, INC." -u "${IOS_DEV_EMAIL}" -p "${IOS_DEV_PASSWORD}" "${IOS_DEV_PROVISIONING_NAME}" | sed -e "s/Successfully downloaded: '\(.*\)'/\1/g"
+export BUILD_CONFIG="Debug"
+export SCHEME="CalendarTest"
+export IOS_DEV_EMAIL="m_sugawara@zappallas.com"
+export IOS_DEV_PASSWORD="Sugawara9"
+export IOS_DEV_PROVISIONING_NAME="CalendarTest_Dev"
+export IOS_DEV_TEAM="ZAPPALLAS, INC."
+
+PROVISIONING_FILE_NAME= ios profiles:download --team "${IOS_DEV_TEAM}" -u "${IOS_DEV_EMAIL}" -p "${IOS_DEV_PASSWORD}" "${IOS_DEV_PROVISIONING_NAME}" | sed -e "s/Successfully downloaded: '\(.*\)'/\1/g"
+sudo chown :wheel /Library/Developer/CoreSimulator/Profiles/Runtimes/iOS\ *.simruntime/Contents/Resources/RuntimeRoot/usr/lib/dyld_sim
 ipa build --embed ${PROVISIONING_FILE_NAME} --configuration ${BUILD_CONFIG} --scheme ${SCHEME} CODE_SIGN_IDENTITY='iPhoneDevelper'
 ipa distribute:crashlytics -c ./Pods/Crashlytics/Crashlytics.framework -a "${FABRIC_API_TOKEN}" -s "${FABRIC_BUILD_SECRET}"

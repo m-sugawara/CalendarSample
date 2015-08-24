@@ -5,5 +5,5 @@ before_script:
 before_install:
     - gem install cocoapods -v '0.38.2'
 xcode_workspace: CalendarTest.xcworkspace
-xcode_scheme: CalendarTestTests
+xcode_scheme: CalendarTest
 xcode_sdk: iphonesimulator

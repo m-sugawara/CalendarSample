@@ -1,3 +1,3 @@
 #!/bin/sh
 security delete-keychain ios-build.keychain
-#rm -f "~/Library/MobileDevice/Provisioning Profiles/Sample.mobileprovision"
+rm -f "~/Library/MobileDevice/Provisioning Profiles/${PROVISIONING_FILE_NAME}.mobileprovision"

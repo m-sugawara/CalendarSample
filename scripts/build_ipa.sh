@@ -7,4 +7,5 @@ cp "./"${PROVISIONING_FILE_NAME} ~/Library/MobileDevice/Provisioning\ Profiles/
 # ipaファイルを作成
 ipa build --embed ${PROVISIONING_FILE_NAME} --configuration ${BUILD_CONFIG} --scheme ${SCHEME} CODE_SIGN_IDENTITY='iPhoneDevelper'
 # Crashlyticsにて配布
-ipa distribute:crashlytics -c ../Pods/Crashlytics/Crashlytics.framework -a "${FABRIC_API_TOKEN}" -s "${FABRIC_BUILD_SECRET}"
+pwd
+ipa distribute:crashlytics -c ./Pods/Crashlytics/Crashlytics.framework -a "${FABRIC_API_TOKEN}" -s "${FABRIC_BUILD_SECRET}"

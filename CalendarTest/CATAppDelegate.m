@@ -8,8 +8,9 @@
 
 #import "CATAppDelegate.h"
 
-// for Travis Test
-#import <AFNetworking/AFNetworking.h>
+// Pods
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
 
 @interface CATAppDelegate ()
 
@@ -20,6 +21,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    // Setup fabric
+    [Fabric with:@[CrashlyticsKit]];
+    
     return YES;
 }
 

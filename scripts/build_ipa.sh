@@ -1,6 +1,6 @@
 # Provisioning ProfileをDLして保存する
 PROVISIONING_FILE_NAME= ios profiles:download -u "${IOS_DEV_EMAIL}" -p "${IOS_DEV_PASSWORD}" --team "ZAPPALLAS, INC." "${IOS_DEV_PROVISIONING_NAME}" | sed -e "s/Successfully downloaded: '\(.*\)'/\1/g"
-PROVISIONING_FILE_NAME=${IOS_DEV_PROVISIONING_NAME}".movileProvision"
+PROVISIONING_FILE_NAME=${IOS_DEV_PROVISIONING_NAME}".mobileprovision"
 mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
 cp "./"${PROVISIONING_FILE_NAME} ~/Library/MobileDevice/Provisioning\ Profiles/
 

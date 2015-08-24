@@ -8,6 +8,9 @@
 
 #import "CATAppDelegate.h"
 
+// for Travis Test
+#import <AFNetworking/AFNetworking.h>
+
 @interface CATAppDelegate ()
 
 @end

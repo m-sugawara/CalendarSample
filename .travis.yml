@@ -1,0 +1,9 @@
+language: objective-c
+osx_image: beta-xcode6.3
+before_script:
+    - brew update && brew upgrade xctool
+before_install:
+    - gem install cocoapods -v '0.38.2'
+xcode_workspace: CalendarTest.xcworkspace
+xcode_scheme: CalendarTestTests
+xcode_sdk: iphonesimulator

@@ -18,14 +18,14 @@ test:
     - sudo gem install cupertino shenzhen --no-ri --no-rdoc
     - /bin/bash scripts/circle/install_certs.sh
   post:
-    #- /bin/bash scripts/circle/build_ipa.sh
+    # - /bin/bash scripts/circle/build_ipa.sh
     #    environment:
     #      APPNAME: CalendarTest
     #      INFO_PLIST: OnAirLogApp/813/Info.plist
     #      ICON_URL: 'https://raw.githubusercontent.com/ngs/onairlog-ios/master/OnAirLogApp/813/Images.xcassets/AppIcon.appiconset/iphone_icon_60x60%403x.png'
 deployment:
   master:
-    branch: /master|publish\-.+/
+    branch: /deployment/.+/
     commands:
       - /bin/bash scripts/circle/build_ipa.sh:
           environment:

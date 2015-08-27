@@ -26,6 +26,9 @@ deployment:
   master:
     branch: /deployment/.+/
     commands:
-      - /bin/bash scripts/circle/build_ipa.sh:
-          environment:
-            APPNAME: CalendarTest
+      pre:
+        - sudo gem install cupertino
+      post:
+        - /bin/bash scripts/circle/build_ipa.sh:
+            environment:
+              APPNAME: CalendarTest

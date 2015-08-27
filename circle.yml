@@ -18,7 +18,7 @@ test:
     - /bin/bash scripts/circle/install_certs.sh
     - bundle exec rake env:export
   post:
-    - /bin/bash scripts/circle/build_ipa.sh:
+    - /bin/bash scripts/circle/build_ipa.sh
     #    environment:
     #      APPNAME: CalendarTest
     #      INFO_PLIST: OnAirLogApp/813/Info.plist
@@ -27,6 +27,6 @@ deployment:
   master:
     branch: /master|publish\-.+/
     commands:
-      - /bin/bash scripts/circle/build_ipa.sh:
+      - /bin/bash scripts/circle/build_ipa.sh
           environment:
             APPNAME: CalendarTest

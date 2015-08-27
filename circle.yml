@@ -15,6 +15,7 @@ dependencies:
     - echo 'export PATH=$HOME/$CIRCLE_PROJECT_REPONAME/vendor/bundle/ruby/2.0.0/bin:$PATH' >> ~/.bashrc
 test:
   pre:
+    - sudo gem install cupertino
     - /bin/bash scripts/circle/install_certs.sh
   post:
     # - /bin/bash scripts/circle/build_ipa.sh

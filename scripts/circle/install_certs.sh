@@ -13,8 +13,8 @@ security unlock-keychain -p travis ios-build.keychain
 security set-keychain-settings -t 3600 -l ~/Library/Keychains/ios-build.keychain
 
 # キーチェーンに証明書を追加する
-security import ./scripts/certs/cert.cer -k ~/Library/Keychains/ios-build.keychain -T /usr/bin/codesign
-security import ./scripts/certs/cert.p12 -k ~/Library/Keychains/ios-build.keychain -P $CERTS_PASS -T /usr/bin/codesign
+security import scripts/certs/cert.cer -k ~/Library/Keychains/ios-build.keychain -T /usr/bin/codesign
+security import scripts/certs/cert.p12 -k ~/Library/Keychains/ios-build.keychain -P $CERTS_PASS -T /usr/bin/codesign
 
 # Provisioning Profileを保存する
 #mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles

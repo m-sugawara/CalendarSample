@@ -15,9 +15,10 @@ dependencies:
     - echo 'export PATH=$HOME/$CIRCLE_PROJECT_REPONAME/vendor/bundle/ruby/2.0.0/bin:$PATH' >> ~/.bashrc
 test:
   pre:
+    - gem install cupertino shenzhen --no-ri --no-rdoc
     - /bin/bash scripts/circle/install_certs.sh
   post:
-    - /bin/bash scripts/circle/build_ipa.sh
+    #- /bin/bash scripts/circle/build_ipa.sh
     #    environment:
     #      APPNAME: CalendarTest
     #      INFO_PLIST: OnAirLogApp/813/Info.plist

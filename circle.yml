@@ -16,7 +16,6 @@ dependencies:
 test:
   pre:
     - /bin/bash scripts/circle/install_certs.sh
-    - bundle exec rake env:export
   post:
     - /bin/bash scripts/circle/build_ipa.sh
     #    environment:

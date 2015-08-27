@@ -1,5 +1,7 @@
 # deployment/testブランチにコミットした時だけIPAを作成します。
 #!/bin/sh
+echo $CI_PULL_REQUEST
+echo $CIRCLE_BRANCH
 if [[ "$CI_PULL_REQUEST" != "false" ]]; then
 	exit 0
 fi

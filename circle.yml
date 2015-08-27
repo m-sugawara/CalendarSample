@@ -1,0 +1,31 @@
+machine:
+  xcode:
+    version: "6.3.1"
+  environment:
+    LANG: en_US.UTF-8
+    XCODE_SCHEME: CalendarTest
+    XCODE_WORKSPACE: CalendarTest.xcworkspace
+    BUILD_URL: "https://circleci.com/gh/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_BUILD_NUM"
+    RELEASE_NOTE: "Auto build from $BUILD_URL"
+general:
+  artifacts:
+    - Distribution
+dependencies:
+  post:
+    - echo 'export PATH=$HOME/$CIRCLE_PROJECT_REPONAME/vendor/bundle/ruby/2.0.0/bin:$PATH' >> ~/.bashrc
+test:
+  pre:
+    - /bin/bash scripts/circle/install_certs.sh
+  post:
+    - /bin/bash scripts/circle/build_ipa.sh
+    #    environment:
+    #      APPNAME: CalendarTest
+    #      INFO_PLIST: OnAirLogApp/813/Info.plist
+    #      ICON_URL: 'https://raw.githubusercontent.com/ngs/onairlog-ios/master/OnAirLogApp/813/Images.xcassets/AppIcon.appiconset/iphone_icon_60x60%403x.png'
+deployment:
+  master:
+    branch: /master|publish\-.+/
+    commands:
+      - /bin/bash scripts/circle/build_ipa.sh:
+          environment:
+            APPNAME: CalendarTest

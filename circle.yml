@@ -27,6 +27,6 @@ deployment:
   master:
     branch: /master|publish\-.+/
     commands:
-      - /bin/bash scripts/circle/build_ipa.sh
+      - /bin/bash scripts/circle/build_ipa.sh:
           environment:
             APPNAME: CalendarTest

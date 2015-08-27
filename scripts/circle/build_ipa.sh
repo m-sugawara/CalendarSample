@@ -1,10 +1,10 @@
 # deployment/testブランチにコミットした時だけIPAを作成します。
 #!/bin/sh
-echo $CI_PULL_REQUESTS
-echo $CI_PULL_REQUEST
-echo $CIRCLE_BRANCH
-echo $CIRCLE_PR_REPONAME
-echo $CIRCLE_PR_NUMBER
+echo "$CI_PULL_REQUESTS"
+echo "$CI_PULL_REQUEST"
+echo "$CIRCLE_BRANCH"
+echo "$CIRCLE_PR_REPONAME"
+echo "$CIRCLE_PR_NUMBER"
 
 if [[ "$CI_PULL_REQUEST" != "false" ]]; then
 	exit 0

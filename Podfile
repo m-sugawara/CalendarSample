@@ -1,0 +1,2 @@
+pod 'Crashlytics'
+pod 'Fabric'

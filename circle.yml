@@ -8,6 +8,9 @@ machine:
     BUILD_URL: "https://circleci.com/gh/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_BUILD_NUM"
     RELEASE_NOTE: "Auto build from $BUILD_URL"
 general:
+  branches:
+    only:
+      - /deployment\/.*/
   artifacts:
     - Distribution
 dependencies:

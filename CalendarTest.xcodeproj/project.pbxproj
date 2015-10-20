@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		207B377365836AA0AB46A7BF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AED493B5D9B2E08AA8E1F91 /* libPods.a */; };
+		592A32B21B8FEF4F0091B325 /* CATScheduleDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 592A32B11B8FEF4F0091B325 /* CATScheduleDetailViewController.m */; };
 		596485D71B2AD4DE00C4D89B /* CATScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 596485D61B2AD4DE00C4D89B /* CATScheduleViewController.m */; };
 		596485DE1B2AF09700C4D89B /* NSString+CATHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 596485DD1B2AF09700C4D89B /* NSString+CATHelper.m */; };
 		5966F1871B2984E300BC783D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5966F1861B2984E300BC783D /* main.m */; };
@@ -36,6 +37,8 @@
 /* Begin PBXFileReference section */
 		086275DA7D8CA16A028FE12C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		4FC5F58DAB19DC0FDF9F7745 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		592A32B01B8FEF4F0091B325 /* CATScheduleDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CATScheduleDetailViewController.h; path = Schedule/CATScheduleDetailViewController.h; sourceTree = "<group>"; };
+		592A32B11B8FEF4F0091B325 /* CATScheduleDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CATScheduleDetailViewController.m; path = Schedule/CATScheduleDetailViewController.m; sourceTree = "<group>"; };
 		596485D51B2AD4DE00C4D89B /* CATScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CATScheduleViewController.h; path = Schedule/CATScheduleViewController.h; sourceTree = "<group>"; };
 		596485D61B2AD4DE00C4D89B /* CATScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CATScheduleViewController.m; path = Schedule/CATScheduleViewController.m; sourceTree = "<group>"; };
 		596485DC1B2AF09700C4D89B /* NSString+CATHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+CATHelper.h"; path = "Category/NSString+CATHelper.h"; sourceTree = "<group>"; };
@@ -204,6 +207,8 @@
 			children = (
 				596485D51B2AD4DE00C4D89B /* CATScheduleViewController.h */,
 				596485D61B2AD4DE00C4D89B /* CATScheduleViewController.m */,
+				592A32B01B8FEF4F0091B325 /* CATScheduleDetailViewController.h */,
+				592A32B11B8FEF4F0091B325 /* CATScheduleDetailViewController.m */,
 			);
 			name = Schedule;
 			sourceTree = "<group>";
@@ -376,6 +381,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5966F18D1B2984E300BC783D /* CATCalendarViewController.m in Sources */,
+				592A32B21B8FEF4F0091B325 /* CATScheduleDetailViewController.m in Sources */,
 				59F6ED981B2A88AB006A0C11 /* CATCalendarPopupView.m in Sources */,
 				596485D71B2AD4DE00C4D89B /* CATScheduleViewController.m in Sources */,
 				5966F1AF1B298F3100BC783D /* CATCalendarViewCell.m in Sources */,

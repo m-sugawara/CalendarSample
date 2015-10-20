@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@interface CATScheduleViewControllerTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *cellImageView;
 
+@end
 
 @interface CATScheduleViewController : UIViewController
 
